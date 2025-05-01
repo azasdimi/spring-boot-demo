@@ -11,14 +11,11 @@ public class DemoController {
 
     //define a private field for the dependency
     private Coach myCoach;
-    private Coach anotherCoach;
 
     //define a constructor for dependency injection
     @Autowired
-    public DemoController(@Qualifier("tennisCoach") Coach coach,
-                          @Qualifier("tennisCoach") Coach coach2) {
+    public DemoController(@Qualifier("tennisCoach") Coach coach) {
         myCoach = coach;
-        anotherCoach = coach2;
     }
 
 //    @Autowired
@@ -31,8 +28,5 @@ public class DemoController {
         return myCoach.GetDailyWorkout();
     }
 
-    @GetMapping("/check")
-    public String check() {
-        return "Comparing beans: coach == anotherCoach: " + (myCoach == anotherCoach) ;
-    }
+
 }
