@@ -1,8 +1,6 @@
 package com.springboot.demo.springbootdemoapp.common;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class BaseballCoach implements Coach {
 
     public BaseballCoach() {
